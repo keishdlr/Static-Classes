@@ -21,12 +21,10 @@ public class NameFormatter {
 
     public static String format (String firstName, String lastName){
 
-
         return firstName + " " + lastName;
     }
 
     public static  String format(String prefix, String firstName, String middleName, String lastName, String suffix){
-
 
         return prefix + " " + firstName + " " + middleName + " " + lastName + " " + suffix;
     }
@@ -35,7 +33,6 @@ public class NameFormatter {
         //use split to separate the name by space
         String[] parts = fullName.split(" ");
 
-
-        return // some value;
+        return String.join(" ", parts);
     }
 }
