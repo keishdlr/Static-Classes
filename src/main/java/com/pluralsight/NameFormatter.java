@@ -10,7 +10,7 @@ public class NameFormatter {
     private String fullName;
 
     //private constructor so I cannot instantiate a class
-    private NameFormatter(){
+    private NameFormatter() {
         System.out.println("Your Name is " +
                 prefix + "" +
                 firstName + "" +
@@ -19,17 +19,47 @@ public class NameFormatter {
                 suffix);
     }
 
-    public static String format (String firstName, String lastName){
+    public static String format(String firstName, String lastName) {
 
         return firstName + " " + lastName;
     }
 
-    public static  String format(String prefix, String firstName, String middleName, String lastName, String suffix){
+    public static String format(String prefix, String firstName, String middleName, String lastName, String suffix) {
+            StringBuilder sb = new StringBuilder();
+            sb.append(lastName).append(", ");
+
+            if(!prefix.isEmpty()){
+                sb.append(prefix).append(", ");
+
+            }
+
+            sb.append(firstName);
+
+        if(!firstName.isEmpty()){
+            sb.append(firstName).append(", ");
+
+        }
+
+        sb.append(middleName);
+
+        if(!middleName.isEmpty()){
+            sb.append(middleName).append(", ");
+
+        }
+
+        sb.append(lastName);
+
+        if(!lastName.isEmpty()){
+            sb.append(lastName).append(", ");
+
+        }
+
+        sb.append(suffix);
 
         return prefix + " " + firstName + " " + middleName + " " + lastName + " " + suffix;
     }
 
-    public static String format (String fullName){
+    public static String format(String fullName) {
         //use split to separate the name by space
         String[] parts = fullName.split(" ");
 
